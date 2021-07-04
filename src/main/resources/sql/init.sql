@@ -1,0 +1,9 @@
+
+
+CREATE TABLE `EMPLOYEE` (
+    `id` INT(11) NOT NULL,
+    `name` VARCHAR(255) NULL DEFAULT NULL,
+    PRIMARY KEY (`id`)
+)
+ENGINE=InnoDB;
+

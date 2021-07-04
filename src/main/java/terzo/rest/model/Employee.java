@@ -1,62 +1,39 @@
 package terzo.rest.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
+import terzo.rest.listener.EmployeeListener;
+
+import javax.persistence.*;
 
 @Entity
+@Getter
+@Setter
+@EntityListeners(EmployeeListener.class)
 public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id")
     private long id;
 
+    @Column(name="name")
     private String name;
-    private String salary;
-    private long departementId;
-    private long managerId;
 
-    public long getId() {
-        return id;
-    }
+    @Column(name="salary")
+    private long salary;
 
-    public void setId(long id) {
-        this.id = id;
-    }
+    @JoinColumn(name = "department_id", referencedColumnName = "id")
+    @ManyToOne(optional=true)
+    private Department department;
 
-    public String getName() {
-        return name;
-    }
+    @JoinColumn(name = "manager_id", referencedColumnName = "id")
+    @ManyToOne(optional=true)
+    private Employee manager;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    @Column(name="designation")
+    private Designation designation;
 
-    public String getSalary() {
-        return salary;
-    }
-
-    public void setSalary(String salary) {
-        this.salary = salary;
-    }
-
-    public long getDepartementId() {
-        return departementId;
-    }
-
-    public void setDepartementId(long departementId) {
-        this.departementId = departementId;
-    }
-
-    public long getManagerId() {
-        return managerId;
-    }
-
-    public void setManagerId(long managerId) {
-        this.managerId = managerId;
-    }
-
-
-
+    @Embedded
+    private Contact contact;
 }
