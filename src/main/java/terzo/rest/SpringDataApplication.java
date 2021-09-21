@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class SpringDataApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TerzoCloudHandsOnApplication.class, args);
+        SpringApplication.run(SpringDataApplication.class, args);
     }
 
 }
