@@ -3,7 +3,6 @@
 ## API endpoint
 http://localhost:8080/api/
 
-### PROBLEM 1
 ### create department
 POST http://localhost:8080/api/departments
 Content-Type: application/json
@@ -77,6 +76,3 @@ GET http://localhost:8080/api/departements?id=1
 
 ### getting All employees by departement id 1
 GET http://localhost:8080/api/employees/search/findByDepartmentId?departmentId=0
-
-
-### PROBLEM 2 & 3 & 4 please see-> Tests 
