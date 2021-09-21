@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 @EnableJpaRepositories("terzo.rest.*")
 @EntityScan("terzo.rest.*")
-public class TerzoCloudHandsOnApplication {
+public class SpringDataApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(TerzoCloudHandsOnApplication.class, args);
